@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int findDuplicate(vector<int>& arr) {
+        int i,num;
+        cout << "The repeating elements are:" << endl;
+        for (i = 0; i < arr.size(); i++) {
+            if (arr[abs(arr[i])] >= 0)
+                arr[abs(arr[i])] = -arr[abs(arr[i])];
+            else num = abs(arr[i]);
+        }
+        return num;
+    }
+};
