@@ -1,0 +1,21 @@
+int median(vector<vector<int>> &mat, int r, int c){
+        // code here     
+        int max=0;int min=2000;
+        for(int i=0;i<r;i++){
+            if(max<mat[i][c-1]) max = mat[i][c-1];
+            if(min>mat[i][0]) min = mat[i][0];
+        }
+        int count=0,d = (r*c+1)/2;
+        while(min<max){
+            int mid = min + (max-min)/2;
+            int place=0;
+            for(int i=0;i<r;i++){
+                place+=upper_bound(mat[i].begin(),mat[i].end(),mid)-mat[i].begin();
+            }
+            if(place<d){
+                min=mid+1;
+            }
+            else max = mid;
+        }
+        return min;
+    }
