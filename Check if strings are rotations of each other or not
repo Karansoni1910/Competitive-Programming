@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   string s1 = "AABCD";
+   string s2 = "CDFAB";
+   if(s1.length()!=s2.length()) cout<<"Not a rotaion of string";
+   string temp = s1+s1;
+   if(temp.find(s2)!=string::npos) cout<<"yes";
+   cout<<string::npos;
+   
+   return 0;
+}
