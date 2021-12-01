@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   map<char, int> m;
+   string str = "test string";
+   for(auto i:str){
+       m[i]++;
+   }
+   for(auto it:m){
+       if(it.second>1) cout<<it.first<<" ";
+   }
+   return 0;
+}
